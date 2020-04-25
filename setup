@@ -5,7 +5,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 echo "Building c2ocaml plugin image..."
 #/usr/bin/time -v -o $DIR/Logs/c2ocaml-image-build.time \
 docker build \
-  -t jjhenkel/c2ocaml \
+  -t rn123/c2ocaml \
   -f $DIR/Dockerfile $DIR \
   &> $DIR/logs/c2ocaml-image-build.log
 
@@ -23,7 +23,7 @@ docker rm build-c2ocaml &> /dev/null
 docker run --name=build-c2ocaml \
   --volumes-from=c2ocaml-gcc7.2.0:ro \
   -v $DIR/plugin:/app/Lets/Transform/plugin \
-  jjhenkel/c2ocaml \
+  rn123/c2ocaml \
   &> $DIR/logs/c2ocaml-plugin-build.log
 
 STATUS=$?
