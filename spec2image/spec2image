@@ -134,5 +134,5 @@ do
     fi
 
     # Cleanup a bit
-    rm -rf $DIR/.context-$PROJECT
+    # rm -rf $DIR/.context-$PROJECT
 done
